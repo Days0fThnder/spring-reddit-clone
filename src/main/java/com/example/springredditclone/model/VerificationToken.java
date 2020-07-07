@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -22,6 +22,6 @@ public class VerificationToken {
     private String token;
     @OneToOne(fetch = LAZY)
     private User user;
-    private Instant expiryDate;
+    private LocalDateTime expiryDate;
 
 }
